@@ -7,10 +7,7 @@ console.log(km);
 const eta = prompt('inserisci la tua eta', '5');
 console.log(eta);
 
-const prezzochilometro = 0.21;
-console.log(prezzochilometro);
-
-let prezzofinale = km * prezzochilometro;
+let prezzofinale = km * 0.21;
 console.log(prezzofinale);
 
 if (eta < 18){
@@ -26,6 +23,7 @@ prezzofinale = prezzofinale.toFixed(2);
 
 
 console.log(prezzofinale);
+
 
 
 
