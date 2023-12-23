@@ -69,6 +69,30 @@ confirmButton.addEventListener('click', function(){
         price = price * 0.6;
     }
 
+    //  random number for carriage
+    const carriage = Math.floor(Math.random() * 8) + 1;
+    console.log(carriage);
+
+    // random prn number
+    const pnr = Math.floor(Math.random() * (100000 - 10000)) + 10000;
+    console.log(pnr);
+
+
+    // put the data in the ticket
+
+    passengerElement.innerText = nameValue;
+    rateElement.innerText = rateName;
+    carElement.innerText = carriage;
+    pnrElement.innerText = pnr;
+    priceElement.innerText = "$" + price;
+
+
+    // show the ticket
+
+    ticketSection.classList.remove('d-none');
+
+
+
 
 
 
