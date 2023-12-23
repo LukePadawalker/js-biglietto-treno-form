@@ -21,39 +21,58 @@ console.log("js ok");
         
 */
 
-const km = document.getElementById("km");
-console.log(km);
+//Form elements
+const nameField = document.getElementById("name");
 
-const eta = document.getElementById("eta");
-console.log(eta);
+const kmsField = document.getElementById("kms");
 
-const prezzochilometro = 0.21;
-console.log(prezzochilometro);
+const ageField = document.getElementById("age");
 
-let prezzofinale = km * prezzochilometro;
-console.log(prezzofinale);
-
-const sconto20 = (((prezzofinale) / 100) * 20);
-console.log(sconto20);
-
-const sconto40 = (((prezzofinale) / 100) * 40);
-console.log(sconto40);
+//buttons
+const confirmButton = document.getElementById("confirm-button");
+const resetButton = document.getElementById("reset-button");
 
 
-if (eta < 18){
-    prezzofinale = prezzofinale - sconto20;
+// ticket elements
 
-}
-else if (eta > 65){
-    prezzofinale = prezzofinale - sconto40;
+const ticketSection = document.getElementById("ticket-section");
+const passengerElement = document.getElementById("passenger-name");
+const rateElement = document.getElementById("rate");
+const carElement = document.getElementById("car");
+const pnrElement = document.getElementById("pnr");
+const priceElement= document.getElementById("price");
 
-} 
+// initial variables
 
-prezzofinale = prezzofinale.toFixed(2);
+const pricekms = 0.21;
+
+let rateName = "Tariffa Standard";
 
 
-console.log(prezzofinale);
-document.getElementById("risposta").innerHTML = `Il prezzo finale è ${prezzofinale}`;
+//event listner
+confirmButton.addEventListener('click', function(){
+
+    const nameValue = nameField.value.trim();
+    const kmsValue = parseInt(kmsField.value);
+    const ageValue = ageField.value.trim();
+
+    console.log(nameValue, kmsValue, ageValue);
+
+    let price = pricekms * kmsValue;
+
+    if (ageValue === 'under-18'){
+        rateName = "Tariffa Under 18";
+        price = price * 0.8;
+
+    }else if (ageValue === "over-65"){
+        rateName = "Tariffa Over 65";
+        price = price * 0.6;
+    }
+
+
+
+
+})
 
 
 
